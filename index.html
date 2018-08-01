@@ -22,7 +22,7 @@
           <h3>Add a New Beer</h3>
 
           <div class="form-group">
-            <input type="text"
+            <input type="text" 
               class="beer-input form-control"
               placeholder="Beer Name">
           </div>
@@ -32,6 +32,24 @@
               class="category-input form-control"
               placeholder="Category">
           </div>
+
+          <form class="beer-form">
+            <h3>Rate it</h3>
+
+          <div class="form-group">
+            <select name="rate" id="rating" class="form-control" required>
+              <option value="">How's the beer?</option>
+              <option value="0">0 - terrible</option>
+              <option value="1">1 - bad</option>
+              <option value="2">2 - not that good</option>
+              <option value="3">3 - good</option>
+              <option value="4">4 - very good</option>
+              <option value="5">5 - amazing!!!</option>
+            </select>
+          </div>
+          
+
+          
 
           <button class="btn btn-primary post-beer" type="button">Post</button>
         </form>

@@ -1,35 +1,36 @@
-//declaring an array:
+
 const beers = [] ;
 
 
-//adding the obj containing the data to the beers array:
-function addBeer (name, category) {
+
+function addBeer (name, category, rating) {
     let newBeer = {
         name : name,
-        category : category
+        category : category,
+        rating : rating
     }
 
     beers.push(newBeer);
 }
 
 
-//removing the list elements and adding new list items with the data from the obj that's in the beers arr:
+
+
 function renderBeers() {
-    $('.beers-list').detach('li');
-    for (let item in beers) {
-        $('.beers-list').append('<li></li>').text(beers[item].name + ' - '+beers[item].category);
-    }
+    $('ul').empty();
+    $.each( beers, function( index, value ){
+        let liBeerName = 'beer: ' + value.name;
+        let liBeerCategory = ' category: ' + value.category;
+        let liBeerRating = ' rating: ' + value.rating + ' out of 5';
+        $('.beers-list').append('<li>' + liBeerName + liBeerCategory + liBeerRating + '</li>');
+    });
 }
 
-/*
-clicking on post will invoke:
-a. addBeer() with the user's inputs. 
-b. renferBeers() which adds the user's inputs to the html list 
-*/
+
 
 
 $('.post-beer').click(function() {
-    addBeer($('.beer-input').val(), $('.category-input').val()); 
+    addBeer($('.beer-input').val(), $('.category-input').val(), $('#rating').val()); 
     renderBeers();
 });
 
@@ -53,4 +54,11 @@ Inside this function, firstly empty the beers container
 (it should be a <ul>, or a div) so that it no longer has any <li> elements inside. 
 Then loop through the beers array, inside the loop append the beers to the beers <ul>
 Invoke renderBeers inside your click handler just below where you're invoking the addBeer function.
+*/
+
+
+/*
+clicking on post will invoke:
+a. addBeer() with the user's inputs. 
+b. renferBeers() which adds the user's inputs to the html list 
 */

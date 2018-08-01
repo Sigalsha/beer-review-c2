@@ -5,3 +5,22 @@ form {
 .user-post, .user-review {
   font-weight: bold;
 }
+
+
+#rating {
+  font-size: 125%;
+}
+
+.beers-list {
+  font-size: 125%;
+  line-height: 160%;
+  word-spacing: 120%;
+}
+
+
+/*
+.beers-list:li {
+  word-spacing: 120%;
+  font-size: 125%;
+}
+*/
